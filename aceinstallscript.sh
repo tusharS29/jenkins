@@ -1,20 +1,15 @@
 pipeline{
     agent any
     environment {
-        DIR="/opt/ace"
+        DIR="$HOME"
     }
     stages{
         stage('build'){
             steps{
                 sh '''
-                if [! -d $DIR]
-                then
-                mkdir /opt/ace
-                else
-                cd /opt/ace
-                fi
+                cd DIR
                 echo "if loop completed" 
-                if [! -d ACE-6.4.7.tar]
+                if [! -f ACE-6.4.7.tar]
                 then
                 sudo wget http://download.dre.vanderbilt.edu/previous_versions/ACE-6.4.7.tar.gz
                 gunzip ACE-6.4.7.tar.gz
