@@ -27,7 +27,7 @@ pipeline{
                 sudo cd /opt/ace/ACE_wrappers
                 sudo make
                 sudo make install
-                sudo sh -c "echo '/opt/ace/ACE_wrappers/lib' >> /etc/ld.so.conf.d/ace.conf"
+                sudo  sh -c "echo '/opt/ace/ACE_wrappers/lib' >> /etc/ld.so.conf.d/ace.conf"
                 sudo ldconfig -v
                 fi
                 '''
